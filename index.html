@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Tea Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #e0f7fa, #4db6ac);
+            color: #004d40;
+        }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #00796b;
+        }
+
+        button {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004d40;
+        }
+
+        .fact {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Tea Facts</h1>
+        <button id="generateBtn">Generate Fact</button>
+        <p class="fact" id="teaFact">Click the button to reveal a tea fact!</p>
+    </div>
+
+    <script>
+        const teaFacts = [
+            "Tea is the second most consumed beverage in the world after water.",
+            "The origin of tea dates back to ancient China around 2737 BC.",
+            "There are six main types of tea: green, black, white, oolong, yellow, and pu-erh.",
+            "Herbal teas are not technically teas, as they do not come from the Camellia sinensis plant.",
+            "India is the second largest producer of tea in the world.",
+            "Green tea is known for its high antioxidant content.",
+            "Matcha is a powdered form of green tea with a strong flavor.",
+            "Earl Grey tea is flavored with oil from the bergamot orange.",
+            "Tea bags were accidentally invented in 1908 by a New York tea merchant.",
+            "Loose-leaf tea provides a richer flavor than tea bags."
+        ];
+
+        document.getElementById('generateBtn').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * teaFacts.length);
+            const randomFact = teaFacts[randomIndex];
+            document.getElementById('teaFact').innerText = randomFact;
+        });
+    </script>
+</body>
+</html>
